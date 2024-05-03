@@ -1,0 +1,11 @@
+
+## testartifact
+
+This project is a test artifact for experimenting with CI workflows and
+deploying to [Maven Central](https://central.sonatype.com/).
+
+## Usage
+
+```
+$ mvn clean package
+```

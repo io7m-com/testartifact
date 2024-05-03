@@ -11,18 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: JDK
         uses: actions/setup-java@v4
         with:
           java-version: 21
           distribution: 'temurin'
 
-      - name: Extract Maven project version
-        run: echo ::set-output name=version::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
-        id: project
+      - name: Collect project version
+        id: project_version
+        run: java .github/workflows/Tools.java ShowProjectVersion >> "$GITHUB_OUTPUT"
 
-      - name: Show extracted Maven project version
-        run: echo ${{ steps.project.outputs.version }}
+      - name: Collect project snapshot
+        id: project_is_snapshot
+        run: java .github/workflows/Tools.java ShowProjectIsSnapshot >> "$GITHUB_OUTPUT"
 
       - name: Build
         run: mvn --errors clean verify site
@@ -39,3 +41,8 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: com.io7m.testartifact.tests/target/site/jacoco-aggregate/jacoco.xml
+
+      - name: Deploy snapshot
+        if: ${{ steps.project_is_snapshot.outputs.IO7M_PROJECT_VERSION_IS_SNAPSHOT == true }}
+        run: mvn deploy:deploy
+

@@ -6,12 +6,12 @@ fatal()
   exit 1
 }
 
-if [ ! -z "${MAVEN_CENTRAL_USERNAME}" ]
+if [ -z "${MAVEN_CENTRAL_USERNAME}" ]
 then
   fatal "MAVEN_CENTRAL_USERNAME is not set."
 fi
 
-if [ ! -z "${MAVEN_CENTRAL_PASSWORD}" ]
+if [ -z "${MAVEN_CENTRAL_PASSWORD}" ]
 then
   fatal "MAVEN_CENTRAL_PASSWORD is not set."
 fi

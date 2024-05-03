@@ -2,12 +2,8 @@ name: deploy.linux.temurin.lts
 
 on:
   push:
-    branches:
-      - master
-      - main
-      - release/*
-    tags:
-      - *
+    branches: [ master, main, release/* ]
+    tags: [ com.io7m.testartifact-* ]
 
 jobs:
   build:

@@ -43,6 +43,6 @@ jobs:
           file: com.io7m.testartifact.tests/target/site/jacoco-aggregate/jacoco.xml
 
       - name: Deploy snapshot
-        if: ${{ steps.project_is_snapshot.outputs.IO7M_PROJECT_VERSION_IS_SNAPSHOT == true }}
+        if: ${{ steps.project_is_snapshot.outputs.IO7M_PROJECT_VERSION_IS_SNAPSHOT == 'true' }}
         run: mvn deploy:deploy
 

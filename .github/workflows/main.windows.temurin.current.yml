@@ -15,8 +15,11 @@ jobs:
       - name: JDK
         uses: actions/setup-java@v4
         with:
-          java-version: 22
-          distribution: 'temurin'
+          java-version:    22
+          distribution:    'temurin'
+          server-id:       sonatype-nexus-snapshots
+          server-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          server-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
 
       - name: Collect project version
         id: project_version

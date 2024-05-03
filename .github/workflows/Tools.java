@@ -35,7 +35,7 @@ public final class Tools
   static {
     final var opsList = List.of(
       new ShowProjectVersion(),
-      new ShowIsSnapshot()
+      new ShowProjectIsSnapshot()
     );
 
     for (final var op : opsList) {
@@ -114,9 +114,9 @@ public final class Tools
     }
   }
 
-  private static final class ShowIsSnapshot implements OpType
+  private static final class ShowProjectIsSnapshot implements OpType
   {
-    ShowIsSnapshot()
+    ShowProjectIsSnapshot()
     {
 
     }
@@ -124,7 +124,7 @@ public final class Tools
     @Override
     public String name()
     {
-      return "ShowIsSnapshot";
+      return "ShowProjectIsSnapshot";
     }
 
     @Override

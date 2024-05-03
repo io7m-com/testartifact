@@ -14,12 +14,15 @@ jobs:
 
       - name: JDK
         uses: actions/setup-java@v4
+        env:
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
         with:
           java-version:    22
           distribution:    'temurin'
           server-id:       sonatype-nexus-snapshots
-          server-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-          server-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          server-username: MAVEN_CENTRAL_USERNAME
+          server-password: MAVEN_CENTRAL_PASSWORD
 
       - name: Collect project version
         id: project_version

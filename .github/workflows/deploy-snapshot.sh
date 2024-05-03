@@ -37,4 +37,4 @@ fi
 EOF
 ) > "$HOME/.m2/settings.xml" || fatal "could not update $HOME/.m2/settings.xml"
 
-exec mvn deploy:deploy
+exec mvn --batch-mode --strict-checksums -DskipTests=true -DskipITs=true deploy:deploy

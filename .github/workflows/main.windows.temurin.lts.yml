@@ -20,11 +20,11 @@ jobs:
 
       - name: Collect project version
         id: project_version
-        run: java .github/workflows/Tools.java ShowProjectVersion >> "$GITHUB_OUTPUT"
+        run: java .github/workflows/Tools.java ShowProjectVersion pom.xml >> "$GITHUB_OUTPUT"
 
       - name: Collect project snapshot
         id: project_is_snapshot
-        run: java .github/workflows/Tools.java ShowProjectIsSnapshot >> "$GITHUB_OUTPUT"
+        run: java .github/workflows/Tools.java ShowProjectIsSnapshot pom.xml >> "$GITHUB_OUTPUT"
 
       - name: Build
         run: mvn --errors clean verify site

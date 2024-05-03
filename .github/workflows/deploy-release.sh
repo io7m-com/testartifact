@@ -21,6 +21,18 @@ fi
   xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <profiles>
+    <profile>
+      <id>io7m</id>
+      <properties>
+        <gpg.useagent>true</gpg.useagent>
+        <gpg.keyname>github-ci-maven-rsa-key</gpg.keyname>
+        <io7m.deployment>true</io7m.deployment>
+      </properties>
+    </profile>
+  </profiles>
+
   <servers>
     <server>
       <id>sonatype-nexus-snapshots</id>

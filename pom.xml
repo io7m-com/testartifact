@@ -13,7 +13,7 @@
 
   <groupId>com.io7m.testartifact</groupId>
   <artifactId>com.io7m.testartifact</artifactId>
-  <version>0.0.8</version>
+  <version>0.0.9-SNAPSHOT</version>
 
   <packaging>pom</packaging>
   <name>com.io7m.testartifact</name>
@@ -27,7 +27,7 @@
 
   <properties>
     <!-- Configuration. -->
-    <io7m.api.previousVersion>0.0.7</io7m.api.previousVersion>
+    <io7m.api.previousVersion>0.0.8</io7m.api.previousVersion>
     <io7m.java.targetJavaVersion>21</io7m.java.targetJavaVersion>
   </properties>
 

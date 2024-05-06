@@ -1,0 +1,14 @@
+FROM docker.io/library/busybox:1.36.1
+
+ENV PATH="/sbin:/bin:/usr/sbin:/usr/bin"
+
+LABEL "org.opencontainers.image.authors"="Mark Raynsford"
+LABEL "org.opencontainers.image.description"="Test artifact."
+LABEL "org.opencontainers.image.licenses"="ISC"
+LABEL "org.opencontainers.image.source"="https://www.github.com/io7m-com/testartifact"
+LABEL "org.opencontainers.image.title"="Test Artifact"
+LABEL "org.opencontainers.image.url"="https://www.io7m.com/software/testartifact"
+LABEL "org.opencontainers.image.version"="${project.version}"
+LABEL "org.opencontainers.image.revision"="${buildNumber}"
+
+ENTRYPOINT ["/bin/sh"]

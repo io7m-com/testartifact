@@ -22,6 +22,7 @@
 
   <modules>
     <module>com.io7m.testartifact.core</module>
+    <module>com.io7m.testartifact.oci</module>
     <module>com.io7m.testartifact.tests</module>
   </modules>
 

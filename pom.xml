@@ -70,6 +70,10 @@
       <name>io7m.com</name>
       <url>https://www.io7m.com/software/testartifact</url>
     </site>
+    <snapshotRepository>
+      <id>central</id>
+      <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+    </snapshotRepository>
   </distributionManagement>
 
   <ciManagement>
